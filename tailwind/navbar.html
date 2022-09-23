@@ -1,0 +1,637 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/370211f101.js" crossorigin="anonymous"></script>
+</head>
+
+<body >
+    <main>
+   
+    <nav class="bg-white w-full  p-6 fixed block ">
+        <!-- Flex container -->
+        <div class="flex items-center justify-around block">
+            <!-- Logo -->
+            <div class="pt-2">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc1IiBoZWlnaHQ9IjQ3IiB2aWV3Qm94PSIwIDAgMTc1IDQ3IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDx0aXRsZT5Mb2dvOiBIYWNrIFJlYWN0b3I8L3RpdGxlPgogIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8cGF0aCBkPSJNMTkuODMgNS45NEExOC4wNyAxOC4wNyAwIDAwNS40IDIzLjU0YTE4LjEgMTguMSAwIDAwMTYuOSAxNy45NFYzMy41YTEwLjEgMTAuMSAwIDAxLTguODYtOS45NmMwLTUuMSAzLjg3LTkuMzMgOC44NS05Ljk3di0yLjQ2YTEyLjU3IDEyLjU3IDAgMDAtMTEuMzIgMTIuNDNjMCA1LjU4IDMuNzIgMTAuMzIgOC44NSAxMS45MnYzLjE3YTE1LjYxIDE1LjYxIDAgMDEtMTEuOTQtMTUuMWMwLTguMTMgNi4zNS0xNC44MiAxNC40MS0xNS40OVYuMjJDOS45LjkgMCAxMS4xIDAgMjMuNTRjMCAxMi40MyA5Ljg5IDIyLjYzIDIyLjMgMjMuMzFWNDQuNGMtMTEuMDUtLjY4LTE5LjgzLTkuNzctMTkuODMtMjAuODZBMjEgMjEgMCAwMTE5LjgzIDIuOTgiIGZpbGw9IiMzNjM0MkUiIGZpbGwtcnVsZT0ibm9uemVybyIvPgogICAgPHBhdGggZD0iTTI0LjkyIDB2Mi40N0EyMS4xOSAyMS4xOSAwIDAxNDQuODggMjMuNWEyMS4xNiAyMS4xNiAwIDAxLTE3LjQ3IDIwLjcydi0yLjk4QTE4LjIxIDE4LjIxIDAgMDA0MS45MyAyMy41YzAtOS41Ni03LjUyLTE3LjQxLTE3LTE4LjF2OC4wNWM1LjAxLjY1IDguOSA0LjkgOC45IDEwLjA1IDAgNS4xNC0zLjg5IDkuNC04LjkgMTAuMDV2Mi40OGM2LjM5LS42NiAxMS40LTYuMDMgMTEuNC0xMi41MyAwLTUuNjMtMy43Ni0xMC40LTguOTItMTIuMDJWOC4zQTE1LjczIDE1LjczIDAgMDEzOS40MyAyMy41YzAgOC4yLTYuNCAxNC45NS0xNC41IDE1LjYyVjQ3YzEyLjQ5LS42OCAyMi40NC0xMC45NiAyMi40NC0yMy41UzM3LjQyLjY5IDI0LjkyIDAiIGZpbGw9IiMyRDgyQjgiIGZpbGwtcnVsZT0ibm9uemVybyIvPgogICAgPHBhdGggZmlsbD0iIzNEMzkzNSIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNNjguMzUgMTkuMzh2LTcuOTZoLTkuNDd2Ny45NmgtMy4yVjEuMmgzLjJWOC42aDkuNDdWMS4yaDMuMnYxOC4xOGgtMy4yTTgyLjYyIDQuMzlsLTMuMjcgOC42N2g2LjU0bC0zLjI3LTguNjd6bTUuNTEgMTVsLTEuMzQtMy41MmgtOC4zNGwtMS4zMyAzLjUxaC0zLjYzTDgwLjYzIDEuMmgzLjk4bDcuMTQgMTguMThoLTMuNjJ6TTkyLjA1IDEwLjNjMC01LjYyIDQuMTctOS40IDkuNTQtOS40YTguMTUgOC4xNSAwIDAxNy4yOCA0LjA1bC0yLjcgMS40MmE1LjM3IDUuMzcgMCAwMC00LjU4LTIuNjRjLTMuNiAwLTYuMjcgMi43Mi02LjI3IDYuNTYgMCAzLjc5IDIuNjcgNi41NiA2LjI3IDYuNTYgMS45NCAwIDMuNy0xLjE0IDQuNTgtMi42NGwyLjcyIDEuMzZhOC4zIDguMyAwIDAxLTcuMyA0LjExYy01LjM3IDAtOS41NC0zLjgtOS41NC05LjM5TTEyMi4zIDE5LjM4bC02LjA3LTcuNjktMS42IDEuODl2NS44aC0zLjJWMS4yaDMuMnY4LjY0bDcuMS04LjY0aDMuOTVsLTcuMzggOC41NiA3Ljk2IDkuNjJoLTMuOTVNNjYuMzUgMzMuMzZjMC0xLjc0LTEuMy0yLjg2LTMuMS0yLjg2aC00LjM4djUuNzhoNC4zOGMxLjggMCAzLjEtMS4xNSAzLjEtMi45MnptLS4zIDEyLjUybC00LTYuOGgtMy4xOHY2LjhoLTMuMTlWMjcuNjloNy45OGMzLjU5IDAgNS45NiAyLjMyIDUuOTYgNS43YTUuMTIgNS4xMiAwIDAxLTQuMzMgNS4zNGw0LjQ2IDcuMTVoLTMuN3pNNzIuNzUgNDUuODhWMjcuNjloMTIuNXYyLjgxaC05LjN2NC42OWg5LjF2Mi44aC05LjF2NS4wOGg5LjN2Mi44aC0xMi41TTk2LjAyIDMwLjg4bC0zLjI3IDguNjdoNi41NGwtMy4yNy04LjY3em01LjUgMTVsLTEuMzMtMy41MmgtOC4zNGwtMS4zMyAzLjUyaC0zLjYzbDcuMTQtMTguMTloMy45OGw3LjE0IDE4LjE5aC0zLjYyek0xMDUuNDUgMzYuODZjMC01LjYgNC4xNy05LjQgOS41NC05LjRhOC4xNSA4LjE1IDAgMDE3LjI3IDQuMDZsLTIuNyAxLjQyQTUuMzcgNS4zNyAwIDAwMTE1IDMwLjNjLTMuNiAwLTYuMjcgMi43Mi02LjI3IDYuNTYgMCAzLjc4IDIuNjcgNi41NiA2LjI3IDYuNTYgMS45MyAwIDMuNy0xLjE0IDQuNTctMi42NGwyLjczIDEuMzZhOC4zIDguMyAwIDAxLTcuMyA0LjExYy01LjM3IDAtOS41NC0zLjgxLTkuNTQtOS40TTEyOS4zIDQ1Ljg4VjMwLjVoLTUuNTF2LTIuOEgxMzh2Mi44aC01LjUydjE1LjM4aC0zLjE5TTE1NC4yNyAzNi44NmMwLTMuNzYtMi4zNi02LjU2LTYuMDEtNi41Ni0zLjY3IDAtNi4wMiAyLjgtNi4wMiA2LjU2IDAgMy43MyAyLjM1IDYuNTYgNi4wMiA2LjU2IDMuNjUgMCA2LjAxLTIuODMgNi4wMS02LjU2em0tMTUuMyAwYzAtNS40MiAzLjg1LTkuNCA5LjI5LTkuNCA1LjQyIDAgOS4yOCAzLjk4IDkuMjggOS40cy0zLjg2IDkuNC05LjI4IDkuNGMtNS40NCAwLTkuMjgtMy45OC05LjI4LTkuNHpNMTcxLjI4IDMzLjM2YzAtMS43NC0xLjMxLTIuODYtMy4xLTIuODZoLTQuMzl2NS43OGg0LjM4YzEuOCAwIDMuMS0xLjE1IDMuMS0yLjkyem0tLjMgMTIuNTJsLTQtNi44aC0zLjE5djYuOGgtMy4xOFYyNy42OWg3Ljk3YzMuNiAwIDUuOTYgMi4zMiA1Ljk2IDUuN2E1LjEyIDUuMTIgMCAwMS00LjMyIDUuMzRsNC40NiA3LjE1aC0zLjd6Ii8+CiAgPC9nPgo8L3N2Zz4K" alt="" />
+            </div>
+            <!-- Menu Items -->
+            <div class="hidden space-x-6 md:flex ">
+                <a href="#" class="hover:text-Blue-400 mt-3">Bootcamps</a>
+                <a href="#" class="hover:text-Blue-400 mt-3">Prepare</a>
+                <a href="#" class="hover:text-Blue-400 mt-3">Outcomes</a>
+                <a href="#" class="hover:text-Blue-400 mt-3">Events</a>
+                
+            
+            <!-- Button -->
+            <a href="#"
+                class=" p-3 px-4 pt-2 text-white bg-blue-500 border-x-16 rounded-sm baseline hover:bg-blue-400 md:block">Apply
+                Now</a>
+    
+            <!-- Hamburger Icon -->
+            <button id="" class="">
+            </div>
+
+    </nav>
+
+    <div class="bg-red-300  p-12" > </div>
+    
+    <header class="">
+   
+        <div class="bg-no-repeat bg-cover text-center   " style="background-image:url(back.jpg); height:600; ">
+        
+            <div class=" pt-24 text-center text-white font-serif  text-4xl w-full  ">
+                <h1 class=" pt-24 text-white-500  ">The Industry's Best Coding Bootcamps For <br> Aspiring Software Engineers</h1>
+
+                <p class="pt-8 text-2xl block text-gray-400 opacity-10  ">Since 2012, Hack Reactor has developed over 8,000+ job-ready software engineers.
+                        
+                <p class="text-2xl font-light block text-gray-400 opacity-10  ">Reinvent your career with us.</p>
+            </div>
+        
+        </div>
+    </header> 
+
+    <!---------------------------------------------logggoooooooooo black-white ------------------------->
+    <section>
+        <!-- Container logo 1 -->
+        <div class="max-w-6xl px-5 mx-auto text-center ">
+            <div class=" bg-white-300 flex flex-col md:flex-row md:space-x-4 ">
+                    
+                <!--  1 -->
+                <div class="flex flex-col items-center p-6 space-y-2 md:w-1/3">
+                    <h4 class="text-sm text-gray-700 ">Rated Best Coding Bootcamp</h4> 
+                    <img src="https://images.ctfassets.net/yr4qj72ki4ky/sksuV6uf7Dk7BuJAO6jzh/ea76164dc3dbc774e2de7d5900793105/coures_report_and_switchup.svg?fm=webp&q=72" class="w-26 h-16"" alt="" />
+                </div>
+        
+                <!--  2 -->
+                <div class="hidden flex-col items-center p-6 space-y-2   md:flex md:w-1/3">  
+                    <h4 class="text-sm text-gray-700">Quora Reviews</h4>
+                    <img src="https://images.ctfassets.net/yr4qj72ki4ky/7KZf31h4YbcuK9PSoQv64y/0c762b131b5364c11a6d06158e0f3dc7/reviews.svg?fm=webp&q=72" class="w-26 h-16"" alt="" />
+                </div>
+        
+                <!-- 3 -->
+                <div class="hidden flex-col items-center p-6 space-y-2  md:flex md:w-1/3">         
+                    <h4 class="text-sm text-gray-700 ">Rated Best ISA Bootcamp</h4>
+                    <img src="https://images.ctfassets.net/yr4qj72ki4ky/68mq7WCZ3J4lJouASZGQTV/245dc03ba4179461dbe6c6569951d0f6/best_isa.svg?fm=webp&q=72" class="w-26 h-16"" alt="" />
+                </div>
+
+                <!-- 4 -->
+                <div class="hidden flex-col items-center p-4 space-y-2 md:flex md:w-1/3">
+                    <h5 class="text-sm text-gray-700">Over 7,000 Alumni Including 97 at</h5> 
+                    <img src="https://images.ctfassets.net/yr4qj72ki4ky/1iq8A0Ybl4vZ3NaFf73YCs/d725df79ba9b7d54491ef25756268320/google.svg?fm=webp&q=72" class="w-26 h-16" alt="" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!---------------------------loooooooooooooooogggggooooooooooooo colored---------------->
+    <section>
+        <!-- Container logo 2 -->
+        <div class="max-w-6xl px-5 mx-auto mt-12 text-center ">
+            
+            <!-- text -->
+            <div class=" ">
+
+                <h2 class=" text-white-500 text-center mb-6 font-serif text-2xl">Grads hired by companies around the world</h2>
+
+                <div class="text-lg text-black-600"> 
+                <p > We've proudly trained thousands of software engineers now working for 2,500+ companies around the world – from major</p>
+                <p> corporations to startups and non-profits and beyond. </p>
+                </div>
+
+                <div class="mt-6 text-lg ">
+                    <p > "The best coding bootcamps simulate a real-world software environment for their students. These grads are so well prepared,</p> 
+                    <p > come in and hit the ground running. That’s really what we’re looking for." <i> - Dustin Beltramo, Director of UX Shared Services,
+                    <br> Customer Experience at Cisco </i></p>
+                </div>
+
+            </div>
+
+            <div class=" flex flex-col  md:flex-row md:space-x-6">
+
+                <!--  1 -->
+                <div class="flex flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:w-1/3">
+                    <img src="https://images.ctfassets.net/yr4qj72ki4ky/5Nfk5OaSE3gl7eF15Q88sx/c688984f7704e7bc384bf91b8cff3299/facebook__3_.gif?fm=webp&q=72"
+                     class="w-42  h-18" alt="" />
+                </div>
+    
+                <!--  2 -->
+                <div class="hidden flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:flex md:w-1/3">
+                    <img src="https://images.ctfassets.net/yr4qj72ki4ky/5DjOZWGeSY3iqaJFr1EdG4/ebb27abec3094d5ffed0c1dcacde10f2/google__2_.gif?fm=webp&q=72"
+                    class="w-42  h-18" alt="" />
+                </div>
+    
+                <!-- 3 -->
+                <div class="hidden flex-col items-center p-6 space-y-4 rounded-lg bg-veryLightGray md:flex md:w-1/3">
+                    <img src="https://images.ctfassets.net/yr4qj72ki4ky/1dhW9B7iIXQVxmzl9U1mbV/083031d45f8031ee7e0d82a883bbd7c7/paypal__2_.gif?fm=webp&q=72"
+                    class="w-42  h-18" alt="" />
+                </div>
+    
+                <!-- 4 -->
+                <div class="hidden flex-col items-center p-6 space-y-4 rounded-lg bg-veryLightGray md:flex md:w-1/3">
+                    <img src="https://images.ctfassets.net/yr4qj72ki4ky/4M3e9OIxGzqnMLtihq4RFO/9978fc7c45161506953957c7d0e55e13/apple__2_.gif?fm=webp&q=72"
+                    class="w-42  h-18" alt="" />
+                </div>
+
+                <!-- 5 -->
+                <div class="hidden flex-col items-center p-6 space-y-4 rounded-lg bg-veryLightGray md:flex md:w-1/3">
+                    <img src="https://images.ctfassets.net/yr4qj72ki4ky/12ZLRyRL4BfLDIV0obG50g/26187e847fa7f3f1e744beb5231ee79e/amazon__2_.gif?fm=webp&q=72" 
+                    class="w-42  h-18" alt="" />
+                </div>
+            </div>
+                
+            <!-- second logo  -->
+            <div class=" flex flex-col  md:flex-row md:space-x-4">
+                
+                <div class="flex flex-col items-center p-4 space-y-4 md:w-1/3">  
+                    <img src="https://images.ctfassets.net/yr4qj72ki4ky/4cL5TFRmG9EeyV5gDPKr6h/04296590e10d879fdd0047fea7473c09/capital-one.gif?fm=webp&q=72"
+                    class="w-42  h-18" alt="" />
+                </div>
+                
+                <!--  2 -->
+                <div class="hidden flex-col items-center p-4 space-y-4   md:flex md:w-1/3">             
+                    <img src="https://images.ctfassets.net/yr4qj72ki4ky/75PpgmULXpuEHNiNi1Jn7A/769a40529599d3e6ac0c6315af59de95/microsoft__2_.gif?fm=webp&q=72"
+                    class="w-42  h-18" alt="" />
+                </div>
+                
+                <!-- 3 -->
+                <div class="hidden flex-col items-center p-4 space-y-4  md:flex md:w-1/3">
+                    <img src="https://images.ctfassets.net/yr4qj72ki4ky/3wc9qonpCWCqjMxjoeSQAj/39b36b6dd19735e145e46f8996906f4d/visa.gif?fm=webp&q=72"
+                    class="w-42  h-18" alt="" />
+                </div>
+
+                <!-- 4-->
+                <div class="hidden flex-col items-center p-4 space-y-4   md:flex md:w-1/3">
+                    <img src="https://images.ctfassets.net/yr4qj72ki4ky/2kSIaK5gTF6VeBHaCrnBVY/11d8c9f548079e3e07af8c8707895be4/accenture.gif?fm=webp&q=72" 
+                    class="w-42  h-18" alt="" />
+                </div>
+
+                <!-- hidden-->
+                <div class="hidden flex-col items-center p-4 space-y-4  md:flex md:w-1/3">
+                        
+                </div> 
+
+            </div>
+        </div>
+    </section>
+
+    <!---------------------videoooooo ads-------------------------->
+    <section class="flex justify-around pl-12  pb-12 ">
+
+        <div class=" flex-wrap py-2  ">
+    
+            <div class=" mt-20 pl-32 ">
+
+
+                <div class="  text-2xl  font-serif pb-4 ">Why Hack Reactor?</div>     
+                <p>Our coding bootcamps are challenging, life-changing, and </p>
+                <p>designed to fit your schedule and skill level.We train students </p>
+                <p>using a computer science and coding curriculum that models the </p>
+                <p>exciting work being done in the software engineering industry. </p>
+                <p>We'll help you launch the career you crave. </p>
+           
+                <p class="mt-4">Led by passionate and experienced instructors, engineers, and <br>
+                career advisors, our graduates become software engineers that <br>
+                career advisors, our graduates become software engineers that <br> 
+                Explore our programs below.</p>
+
+            </div>
+
+        </div>
+        
+        <div class= "mt-12 border border-gray-700">
+
+            <iframe width="650" height=" 400"  src="https://vimeo.com/329678340" frameborder="0" allow="accelerometer; autoplay;
+            encrypted-media; gyroscope; picture-in-picture" allowfullscreen > </iframe>       
+     
+        </div>
+    </section>
+
+    <!---------------------our coding bootcamps-------------------------->
+    <section class=" px-4">
+        <!-- Container  -->
+        <div class="max-w-5xl mx-auto mt-4  space-x-4 pb-20">
+            
+            <h1 class=" text-3xl  text-center font-serif ">
+                Our Coding Bootcamps
+            </h1>
+          
+            <div class="flex flex-col drop-shadow-2xl  md:flex-row md:space-x-2 mt-8">
+                 
+                <!-- Test 1 -->
+                <div class="flex flex-col items-center   md:w-1/3 border-b  border-r border-gray-500 ">
+                    <img src="1.jpg" class="w-full h-64 animate-spin" alt="" />
+                    <h5 class="text-2xl mt-12 text-center">12-Week Online <br> Immersive (Full Time)</h5>
+                    <div class="text left">
+                        <p class="text-sm mt-3 ">
+                            <p> Our flagship, fast-paced bootcamp</p>
+                            <p> is designed to train those with</p>
+                            <p> intermediate coding skills to</p>
+                            <p> become software engineers in just</p>
+                            <p> 12 weeks. Learn live online, from</p>
+                            <p> wherever you are in the world.”</p>
+                        </p>
+                    </div>
+                    <div class=" px-12 py-2 mb-12 mt-20 text-Blue-400 border border-blue-500 hover:bg-blue-400 hover:text-white " >
+                        <a>Learn More</a>
+                    </div>
+                </div>
+    
+                <!-- Test 2 -->
+                <div class="hidden flex-col items-center   md:flex md:w-1/3 border-b  border-r border-gray-500 ">
+                    <img src="2.jpg" class="w-full h-64 animate-bounce" alt="" />
+                    <h5 class="text-2xl  mt-12 text-center ">36-Week Online <br> Immersive (Part Time)</h5>
+                    <div class="text left">
+                        <p class="text-sm mt-3  ">
+                            The carefully designed pace of our </p>
+                            <p> part-time coding bootcamp allows</p>
+                            <p> for work-life balance as you train </p>
+                            <p> for a new career.Those with </p>
+                            <p> intermediate coding skills will</p>
+                            <p> become software engineers in 36
+                            <p> weeks, learning on nights and</p>
+                            <p> weekends. </p>
+                        </p>
+                    </div>
+                    <div class=" px-12 py-2 mb-12 mt-8 text-Blue-400 border border-blue-500 hover:bg-blue-400 hover:text-white " >
+                        <a>Learn More</a>
+                    </div>
+                </div>
+    
+                <!-- Test 3 -->
+                <div class="hidden flex-col items-center w-full  md:flex md:w-1/3 border-b border-r border-gray-500  ">
+                    <img src="3.jpg" class=" w-52 h-64 animate-pulse duration-100 delay-100" alt="" />
+                    <h5 class="text-2xl  mt-12 text-center">19-Week Online <br> Immersive (Full Time)</h5>
+                    <div class="text left">
+                        <p class="text-sm mt-3 ">
+                            <p> newest program is designed </p>
+                            <p> for those with little to no coding </p>
+                            <p> experience. Start your journey </p>
+                            <p> toward learning to code and </p>
+                            <p> becoming a software engineer </p>
+                            <p> today.</p>
+                        </p>
+                    </div>
+                    <div class=" px-12 py-2 mb-12  mt-20  text-Blue-400 border border-blue-500 hover:bg-blue-400 hover:text-white " >
+                        <a>Learn More</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>  
+    </section>
+    <!-------------------------------------------------------------------------->
+
+    <!-- ---------wich  boottccaaamppppp are you---------------------------->
+    <section class="flex  justify-around color-white font-serif  font-light  " >
+        <article>
+            <h1 class=" text-3xl flex justify-center mb-12 ">Which bootcamp is right for you?</h1> 
+
+            <div class=" flex justify-center border-b border-r  border-gray-500 mb-6 ">
+                <img src="w1.jpg" class=" w-12 h-full" alt="" />
+
+                <div>
+                    <h2 class= " text-2xl mt-8 text-center font-serif pl-4" >Comparing our Software Engineering Immersives</h2>  
+                    <p>No matter which of our programs you choose, the outcome will be the same:</p>
+                    <p>you’ll graduate as a job-ready full-stack software engineer. But how do you</p>
+                    <p>removing a hurdle of affordability, we can focus on training students from a</p>
+                    <p>including program timing and pacing, needed incoming skill level, learning</p>
+                    <p>style, and curriculum.</p>
+                </div>
+
+                <div class=" ">
+                    <a class= "px-8 py-2 mb-20 mt-6 text-Blue-400 border border-blue-500 hover:bg-blue-400 hover:text-white " >Read More </a>
+                </div>
+            </div>
+        </article>
+    </section>
+
+
+    <!---------------Logo Profileee -------------------------------------->
+    <section class="flex mt-16 justify-center color-white font-serif  font-light  " >
+        <article>
+     
+
+            <div class="  ">
+                <div class=" flex justify-center border-b border-r  border-gray-500 mb-6 ">
+                    <img src="g1.jpg" class=" w-12 h-full" alt="" />
+                    <div>
+                        <p>"I just accepted an offer from Amex to be a software engineer</p>
+                        <p>in New York, and it is exactly the type of position I wanted.</p>
+                        <p>Hack Reactor's career services and support have far surpassed</p>
+                        <p>my expectations."</p>
+                        <i>Melissa Louie, Software Engineer, American Express</i>
+                    </div>
+                </div>
+
+                <div class=" flex justify-center border-b border-r  border-gray-500 mb-6 ">
+                    <img src="g2.jpg" class=" w-20 h-full" alt="" />
+                    <div>
+                        <p>"I’ve been around teachers for a really long time, both in a</p>
+                        <p>collegial sense and in a student-teacher type of relationship.</p>
+                        <p>One of my favorite teachers of all time was the lead instructor</p>
+                        <p>of Hack Reactor at Austin."</p>
+                        <i>Evelyn Binkard, Software Engineer, Kapsch Trafficcom North America</i>
+                    </div>
+                </div>
+
+                <div class=" flex justify-center border-b border-r border-gray-500 mb-12">
+                    <img src="g3.jpg" class="w-24 h-full" alt="" />
+                    <div>   
+                        <p>"When the bootcamp believed in me by offering the</p>
+                        <p>opportunity for an Income Share Agreement, then I believed</p>
+                        <p>in the bootcamp."</p>
+                        <i>Kevin Fang, Software Engineer, Self-Employed</i>
+                    </div>   
+                </div>
+            </div>
+
+        </article>
+
+        <div class="flex flex-col items-center   md:w-1/3 border-b  border-r border-gray-500 ">
+            <img src="L1.jpg" class="w-12 h-12" alt="" />
+            <img src="L2.jpg" class="w-12 h-12" alt="" />
+            <img src="L3.jpg" class="w-12 h-12" alt="" />        
+            <div class="text left">
+                <p class="text-sm mt-3" >
+                <p> Career Karma, Switchup, and Course</p>
+                <p> Report all consider Hack Reactor a top</p>
+                <p> bootcamp in several categories.</p>
+                </p>
+            </div>
+                   
+        </div>
+            
+    </section>
+
+
+    <!---- Learn abouut  ISA ----->
+    <section class="flex  justify-around color-white font-serif  font-light  " >
+        <article>
+            <h1 class=" text-3xl flex justify-center mb-12 ">Learn about our student-friendly ISA</h1> 
+
+            
+            <div class=" flex justify-center border-b border-r  border-gray-500 mb-6 ">
+                <img src="w2.jpg" class=" w-12 h-full" alt="" />
+
+                <div>
+                    <h2 class= " text-2xl mt-8 text-center font-serif pl-4" >How you can pay tuition after you're hired</h2>  
+                        <p>The Galvanize Income Share Agreement allows students to defer tuition</p>
+                        <p>payment (after a $100 deposit) until they're making at least $60k/year. By</p>
+                        <p>removing a hurdle of affordability, we can focus on training students from a</p>
+                        <p>wide variety of backgrounds.</p>
+                </div>
+
+                <div class=" ">
+                    <a class= "px-8 py-2 mb-20 mt-6 text-Blue-400 border border-blue-500 hover:bg-blue-400 hover:text-white " >Learn how it works </a>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!---------------------------------------------------------------------alumni stories------------------>
+    <section>
+        <!-- Container testm -->
+        <div class=" max-w-5xl mx-auto mt-4  space-x-4 pb-12 ">
+            
+            <h1 class=" text-3xl  text-center font-serif ">
+                Alumni Stories
+            </h1>
+          
+            <div class="flex flex-col drop-shadow-2xl  md:flex-row md:space-x-2 mt-8 ">
+                <!-- Test 1 -->
+                <div class="flex flex-col items-center   md:w-1/3 border-b  border-r border-gray-500 ">
+                    <img src="s1.jpg" class=" w-full h-64" alt="" />
+                    <h5 class="text-3xl mt-8 text-center font-serif"> Ryan Perry </h5>
+                    <div class="text left">
+                        <p class="text-sm mt-3 ">
+                            <p> Ryan is the Co-Founder of</p>
+                            <p> Pyroscrope, a software company</p>
+                            <p> that lets users continuously</p>
+                            <p> monitor servers to debug</p>
+                            <p> performance issues down to a line</p>
+                            <p> of code.</p>
+                        </p>
+                    </div>
+                    
+                    <div class=" px-12 py-2 mb-12 mt-12 text-Blue-400 border border-blue-500 hover:bg-blue-400 hover:text-white  " >
+                        <a>Read More</a>
+                    </div>
+                </div>
+    
+                <!-- Test 2 -->
+                <div class="hidden flex-col items-center   md:flex md:w-1/3 border-b  border-r border-gray-500   ">
+                    <img src="s2.jpg" class=" w-full h-64" alt="" />
+                    <h5 class="text-3xl  mt-8 text-center font-serif ">Kim Luu</h5>
+                    <div class="text left">
+                        <p class="text-sm mt-3  ">
+                            <p> After the bootcamp, Kim landed </p>
+                            <p> her current job as a Software</p>
+                            <p> Engineer at Intellivision </p>
+                            <p> Entertainment, a company whose</p>
+                            <p> mission is to unite people through</p>
+                            <p> affordable, family-friendly </p>
+                            <p> entertainment. </p>
+                        </p>
+                    </div>
+
+                    <div class=" px-12 py-2 mb-12 mt-6 text-Blue-400 border border-blue-500 hover:bg-blue-400 hover:text-white" >
+                        <a>Read More</a>
+                    </div>
+                </div>
+    
+                <!-- Test 3 -->
+                <div class="hidden flex-col items-center md:flex md:w-1/3 border-b border-r border-gray-500  ">
+                    <img src="s3.jpg" class=" w-full h-64" alt="" />
+                    <h5 class="text-3xl  mt-8 text-center font-serif"> Joe Buono </h5>
+                    <div class="text left">
+                        <p class="text-sm mt-3 ">
+                            <p> Studying music has more to do</p>
+                            <p> with preparing for a career in </p>
+                            <p> software engineering than you</p>
+                            <p> might think. Just ask bootcamp</p>
+                            <p> Joe Buono, musician and Frontend </p>
+                            <p> Engineer at Amazon Web </p>
+                            <p> Services. </p>
+                        </p>
+                    </div>
+
+                    <div class=" px-12 py-2 mb-12 mt-6 text-Blue-400 border border-blue-500 hover:bg-blue-400 hover:text-white" >
+                        <a>Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>  
+    </section>
+
+    <!-------------------------------------------------Explore Enginering------------------>
+    <section class="flex mt-16 justify-around color-white font-serif  font-light  " >
+        <article>
+            <h1 class=" text-3xl flex justify-center mb-12 ">Explore the Software Engineering Profession</h1> 
+
+            <div class="  ">
+                <div class=" flex justify-center border-b border-r  border-gray-500 mb-6 ">
+                    <img src="p1.jpg" class=" w-12 h-full" alt="" />
+
+                    <div>
+                    <h2 class= " text-2xl mt-8 text-center font-serif pl-4" >Projects software engineers need in their professional portfolios</h2>
+
+                    
+                        <p>To learn what employers look for in coding portfolios, read this interview with</p>
+                        <br>
+                        <p>our Associate Director of Career Services.</p>
+                    </div>
+
+                    <div class=" ">
+                        <a class= "px-8 py-2 mb-20 mt-6 text-Blue-400 border border-blue-500 hover:bg-blue-400 hover:text-white " >Read More </a>
+                    </div>
+                </div>
+
+                <div class=" flex justify-center border-b border-r  border-gray-500 mb-6 ">
+                    <img src="p2.jpg" class=" w-20 h-full" alt="" />
+                    <div>
+                        <h2 class= "text-2xl mt-8 text-center font-serif" >Career Karma: How Hack Reactor Teaches Software Engineering </h2>
+
+                    
+                        <p>Read this article from Career Karma on how we approach software engineering</p>
+                        <p>training by embracing a blend of new and old teaching styles and methods.</p>
+                    </div>
+
+                    <div class=" ">
+                        <a class= "px-8 py-2 mb-20 mt-6 text-Blue-400 border border-blue-500 hover:bg-blue-400 hover:text-white " >Read More </a>
+                    </div>
+                    
+                </div>
+
+                <div class=" flex justify-center border-b border-r border-gray-500 mb-6">
+                    <img src="p3.jpg" class="w-24 h-full" alt="" />
+                    
+                    <div>
+                        <h2 class= "text-2xl mt-8 text-center font-serif" > Software engineer salaries by experience level </h2>
+                    
+                    
+                        <p>It can be to find an average starting salary or the overall average salary of</p>
+                        <p>different tech jobs. But software engineering offers many salary levels based on</p>
+                        <p>experience. When looking for a company or an area to begin your career, it</p>
+                        <p>helps to get a sense of this range.</p>
+                    </div>
+                    <div> 
+
+                        <a class= "px-8 py-2 mb-20 mt-6 text-Blue-400 border border-blue-500 hover:bg-blue-400 hover:text-white " >Read More </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </article>
+    </section> 
+
+    <!----------------Get  started-->
+    <section class="flex mt-16 justify-center color-white font-serif  font-light" >
+        <div>
+            <h1 class=" text-3xl flex justify-center ">Ready to Get Started?</h1> 
+            <div class=" flex justify-center">
+                <a class= "px-6 py-2 mb-20 mt-6 text-Blue-400 rounded border border-blue-500 hover:bg-blue-400 hover:text-white " >Apply Now </a>
+            </div>
+        </div>
+    </section> 
+
+    <!----- fooootttttttteerrrrrrrr----------------->
+    <footer class="bg-blue-500">
+
+        <div class="flex justify-around  space-x-4 ">
+            <!-- Flex container -->
+            <div class="flex  space-x-24 text-white text-bold font-serif ">
+                <!-- Logo white -->
+                <div class="flex space-x-24">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc1IiBoZWlnaHQ9IjQ3IiB2aWV3Qm94PSIwIDAgMTc1IDQ3IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDx0aXRsZT5IYWNrIFJlYWN0b3IgbmVnYXRpdmUgbG9nbzwvdGl0bGU+CiAgPGcgZmlsbD0iI0ZGRkZGRiIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgIDxwYXRoIGQ9Ik0xOS44MyA1Ljk0QTE4LjA3IDE4LjA3IDAgMDA1LjQgMjMuNTRhMTguMSAxOC4xIDAgMDAxNi45IDE3Ljk0VjMzLjVhMTAuMSAxMC4xIDAgMDEtOC44Ni05Ljk2YzAtNS4xIDMuODctOS4zMyA4Ljg1LTkuOTd2LTIuNDZhMTIuNTcgMTIuNTcgMCAwMC0xMS4zMiAxMi40M2MwIDUuNTggMy43MiAxMC4zMiA4Ljg1IDExLjkydjMuMTdhMTUuNjEgMTUuNjEgMCAwMS0xMS45NC0xNS4xYzAtOC4xMyA2LjM1LTE0LjgyIDE0LjQxLTE1LjQ5Vi4yMkM5LjkuOSAwIDExLjEgMCAyMy41NGMwIDEyLjQzIDkuODkgMjIuNjMgMjIuMyAyMy4zMVY0NC40Yy0xMS4wNS0uNjgtMTkuODMtOS43Ny0xOS44My0yMC44NkEyMSAyMSAwIDAxMTkuODMgMi45OCIgZmlsbC1ydWxlPSJub256ZXJvIi8+CiAgICA8cGF0aCBkPSJNMjQuOTIgMHYyLjQ3QTIxLjE5IDIxLjE5IDAgMDE0NC44OCAyMy41YTIxLjE2IDIxLjE2IDAgMDEtMTcuNDcgMjAuNzJ2LTIuOThBMTguMjEgMTguMjEgMCAwMDQxLjkzIDIzLjVjMC05LjU2LTcuNTItMTcuNDEtMTctMTguMXY4LjA1YzUuMDEuNjUgOC45IDQuOSA4LjkgMTAuMDUgMCA1LjE0LTMuODkgOS40LTguOSAxMC4wNXYyLjQ4YzYuMzktLjY2IDExLjQtNi4wMyAxMS40LTEyLjUzIDAtNS42My0zLjc2LTEwLjQtOC45Mi0xMi4wMlY4LjNBMTUuNzMgMTUuNzMgMCAwMTM5LjQzIDIzLjVjMCA4LjItNi40IDE0Ljk1LTE0LjUgMTUuNjJWNDdjMTIuNDktLjY4IDIyLjQ0LTEwLjk2IDIyLjQ0LTIzLjVTMzcuNDIuNjkgMjQuOTIgMCIgZmlsbC1ydWxlPSJub256ZXJvIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik02OC4zNSAxOS4zOHYtNy45NmgtOS40N3Y3Ljk2aC0zLjJWMS4yaDMuMlY4LjZoOS40N1YxLjJoMy4ydjE4LjE4aC0zLjJNODIuNjIgNC4zOWwtMy4yNyA4LjY3aDYuNTRsLTMuMjctOC42N3ptNS41MSAxNWwtMS4zNC0zLjUyaC04LjM0bC0xLjMzIDMuNTFoLTMuNjNMODAuNjMgMS4yaDMuOThsNy4xNCAxOC4xOGgtMy42MnpNOTIuMDUgMTAuM2MwLTUuNjIgNC4xNy05LjQgOS41NC05LjRhOC4xNSA4LjE1IDAgMDE3LjI4IDQuMDVsLTIuNyAxLjQyYTUuMzcgNS4zNyAwIDAwLTQuNTgtMi42NGMtMy42IDAtNi4yNyAyLjcyLTYuMjcgNi41NiAwIDMuNzkgMi42NyA2LjU2IDYuMjcgNi41NiAxLjk0IDAgMy43LTEuMTQgNC41OC0yLjY0bDIuNzIgMS4zNmE4LjMgOC4zIDAgMDEtNy4zIDQuMTFjLTUuMzcgMC05LjU0LTMuOC05LjU0LTkuMzlNMTIyLjMgMTkuMzhsLTYuMDctNy42OS0xLjYgMS44OXY1LjhoLTMuMlYxLjJoMy4ydjguNjRsNy4xLTguNjRoMy45NWwtNy4zOCA4LjU2IDcuOTYgOS42MmgtMy45NU02Ni4zNSAzMy4zNmMwLTEuNzQtMS4zLTIuODYtMy4xLTIuODZoLTQuMzh2NS43OGg0LjM4YzEuOCAwIDMuMS0xLjE1IDMuMS0yLjkyem0tLjMgMTIuNTJsLTQtNi44aC0zLjE4djYuOGgtMy4xOVYyNy42OWg3Ljk4YzMuNTkgMCA1Ljk2IDIuMzIgNS45NiA1LjdhNS4xMiA1LjEyIDAgMDEtNC4zMyA1LjM0bDQuNDYgNy4xNWgtMy43ek03Mi43NSA0NS44OFYyNy42OWgxMi41djIuODFoLTkuM3Y0LjY5aDkuMXYyLjhoLTkuMXY1LjA4aDkuM3YyLjhoLTEyLjVNOTYuMDIgMzAuODhsLTMuMjcgOC42N2g2LjU0bC0zLjI3LTguNjd6bTUuNSAxNWwtMS4zMy0zLjUyaC04LjM0bC0xLjMzIDMuNTJoLTMuNjNsNy4xNC0xOC4xOWgzLjk4bDcuMTQgMTguMTloLTMuNjJ6TTEwNS40NSAzNi44NmMwLTUuNiA0LjE3LTkuNCA5LjU0LTkuNGE4LjE1IDguMTUgMCAwMTcuMjcgNC4wNmwtMi43IDEuNDJBNS4zNyA1LjM3IDAgMDAxMTUgMzAuM2MtMy42IDAtNi4yNyAyLjcyLTYuMjcgNi41NiAwIDMuNzggMi42NyA2LjU2IDYuMjcgNi41NiAxLjkzIDAgMy43LTEuMTQgNC41Ny0yLjY0bDIuNzMgMS4zNmE4LjMgOC4zIDAgMDEtNy4zIDQuMTFjLTUuMzcgMC05LjU0LTMuODEtOS41NC05LjRNMTI5LjMgNDUuODhWMzAuNWgtNS41MXYtMi44SDEzOHYyLjhoLTUuNTJ2MTUuMzhoLTMuMTlNMTU0LjI3IDM2Ljg2YzAtMy43Ni0yLjM2LTYuNTYtNi4wMS02LjU2LTMuNjcgMC02LjAyIDIuOC02LjAyIDYuNTYgMCAzLjczIDIuMzUgNi41NiA2LjAyIDYuNTYgMy42NSAwIDYuMDEtMi44MyA2LjAxLTYuNTZ6bS0xNS4zIDBjMC01LjQyIDMuODUtOS40IDkuMjktOS40IDUuNDIgMCA5LjI4IDMuOTggOS4yOCA5LjRzLTMuODYgOS40LTkuMjggOS40Yy01LjQ0IDAtOS4yOC0zLjk4LTkuMjgtOS40ek0xNzEuMjggMzMuMzZjMC0xLjc0LTEuMzEtMi44Ni0zLjEtMi44NmgtNC4zOXY1Ljc4aDQuMzhjMS44IDAgMy4xLTEuMTUgMy4xLTIuOTJ6bS0uMyAxMi41MmwtNC02LjhoLTMuMTl2Ni44aC0zLjE4VjI3LjY5aDcuOTdjMy42IDAgNS45NiAyLjMyIDUuOTYgNS43YTUuMTIgNS4xMiAwIDAxLTQuMzIgNS4zNGw0LjQ2IDcuMTVoLTMuN3oiLz4KICA8L2c+Cjwvc3ZnPgo="
+                    alt="" />
+                </div>
+
+                <div class="  pt-6 ">
+                    <a> Stay current. Stay connected. Sign up for our <br>newsletter!</a>
+                </div>
+
+            
+                <div class=" px-10 py-2 mb-12 mt-6  border border-white-500 hover:bg-white hover:text-gray-700" >
+                    <a>Sign Up</a>
+                </div>
+            
+            </div>
+            
+        </div>
+        <hr class="px-24">
+        <div class=" flex justify-center space-x-24 mb-12 pt-8">
+
+
+            <div class="flex flex-col space-y-3 text-white">
+                <a href="#" class="text-bold font-serif">Get Started</a>
+                <a href="#" class=" text-sm transform transition-all hover:translate-x-2 ">Admissions Process</a>
+                <a href="#" class=" text-sm transform transition-all hover:translate-x-2">Scholarships</a>
+            </div>
+                <!----transform hover:scale-125-->
+            <div class="flex flex-col  space-y-4 text-white">
+                <a href="#" class=" text-bold font-serif">COMPANY </a>
+                <a href="#" class=" text-sm transform transition-all hover:translate-x-2 ">About</a>
+                <a href="#" class=" text-sm transform transition-all hover:translate-x-2 ">Careers</a>
+                <a href="#" class=" text-sm transform transition-all hover:translate-x-2 ">Blog</a>
+                <a href="#" class=" text-sm transform transition-all hover:translate-x-2">Regulatory Information</a>
+            </div>
+
+            <div class="flex flex-col space-y-4 text-white">
+                <a href="#" class=" text-bold font-serif"> MORE </a>
+                <a href="#" class=" text-sm transform transition-all hover:translate-x-2">Partnerships</a>
+                <a href="#" class=" text-sm transform transition-all hover:translate-x-2">FAQ</a>
+                <a href="#" class=" text-sm transform transition-all hover:translate-x-2">Enterprise</a>
+                <a href="#" class=" text-sm transform transition-all hover:translate-x-2">Locations</a>
+            </div>
+
+            <div class="flex  flex-col space-y-3 text-white ">
+
+                    <a href="#" class=" text-bold font-serif">REVIEWS</a>
+                <div class=" flex space-x-4">
+
+                    <a href="#" class=" text-sm transform transition-all hover:translate-x-2"> Google</a> 
+                    <a href="#" class=" text-sm transform transition-all hover:translate-x-2">SwitchUp</a> 
+                    <a href="#" class=" text-sm transform transition-all hover:translate-x-2">Yelp </a> 
+                    <a href="#" class=" text-sm transform transition-all hover:translate-x-2">Course Report</a>
+                </div>
+            
+
+                    <a href="#" class="hover:text-brightRed text-bold font-serif">SOCIAL</a>
+                <div class="flex space-x-8 pt-2">
+
+                    <a class="border rounded-full border-blue-900 hover:border-white w-8 h-8"> <img src=" https://cdn-icons-png.flaticon.com/128/5968/5968764.png "> </a>
+                    <a class="border rounded-full border-blue-900 hover:border-white w-8 h-8"> <img src=" https://cdn-icons.flaticon.com/png/128/3670/premium/3670151.png?token=exp=1660886512~hmac=e06bc59df74c63ca02f18709817c2185 "> </a>        
+                    <a class="border rounded-full border-blue-900 hover:border-white w-8 h-8"> <img src=" https://cdn-icons.flaticon.com/png/128/3670/premium/3670147.png?token=exp=1660886964~hmac=f3c47602bb7cfe6ec945bb3e3c5df3cb "> </a>
+                    <a class="border rounded-full border-blue-900 hover:border-white w-8 h-8"> <img src=" https://cdn-icons.flaticon.com/png/128/3955/premium/3955024.png?token=exp=1660895905~hmac=8140e4fa8be73a3803d9a543c7e81451"> </a>
+                    <a class="border rounded-full border-blue-900 hover:border-white w-8 h-8"> <img src=" https://cdn-icons-png.flaticon.com/128/355/355994.png "> </a>
+                </div>
+
+            </div>
+            
+        </div>
+
+        <div class="flex justify-around   bg-blue-600 py-8 border-t border-blue-300  ">
+            <div class="flex pl-8  ">
+
+                <h1 class=" text-Blue-100">  © 2022 Galvanize. All rights reserved. </h1>    
+            </div>
+
+            <div class=" space-x-2 text-gray-700  ">
+                <a href="#" class="hover:text-Blue-200 "> Terms </a>
+                
+                <a href="#" class="hover:text-Blue-200 "> / Privacy Policy</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+    </main>
+   </body>
+</html>
